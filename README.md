@@ -13,6 +13,7 @@
 
  navigate to (http://localhost:4200/)
 
- admin login credintials:
+
+ front end admin login credintials:
  Username: Admin
  Password: password123
