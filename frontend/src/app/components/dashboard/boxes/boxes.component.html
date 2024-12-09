@@ -1,0 +1,237 @@
+<div class="container mt-4">
+    <h2>Available Breaks</h2>
+
+    <table class="table">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Brand</th>
+        <th>Sport</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let box of boxes">
+        <td>{{ box._id }}</td>
+        <td>{{ box.brand }}</td>
+        <td>{{ box.sport }}</td>
+        <td>{{ box.description }}</td>
+        <td>${{ box.price }}</td>
+        <td>
+            <!-- Edit Button -->
+            <button
+            class="btn btn-primary btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#editBoxModal"
+            (click)="getBox(box._id)"
+            >
+            Edit
+            </button>
+            <!-- Delete Button -->
+            <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteBox(box._id)"
+            >
+            Delete
+            </button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+    <button
+    type="button"
+    class="btn btn-success mb-3 addBox"
+    data-bs-toggle="modal"
+    data-bs-target="#addBoxModal"
+    >
+    Add New Box
+    </button>
+</div>
+
+<!-- Modal for Adding Break -->
+<div
+class="modal fade"
+id="addBoxModal"
+tabindex="-1"
+aria-labelledby="addBoxModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="addBoxModalLabel">Add New Break</h5>
+        <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        ></button>
+    </div>
+    <div class="modal-body">
+        <form>
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+            type="text"
+            id="brand"
+            [(ngModel)]="box.brand"
+            name="brand"
+            class="form-control"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="role" class="form-label">Sport</label>
+            <select
+            id="role"
+            [(ngModel)]="box.sport"
+            name="role"
+            class="form-select"
+            >
+            <option value="" disabled>Select Sport</option>
+            <option value="Baseball">Baseball</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Football">Football</option>
+            <option value="Soccer">Soccer</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input
+            type="text"
+            id="description"
+            [(ngModel)]="box.description"
+            name="description"
+            class="form-control"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+            placeholder="$150"
+            type="text"
+            id="price"
+            [(ngModel)]="box.price"
+            name="price"
+            class="form-control"
+            />
+        </div>
+
+<app-image-upload></app-image-upload>
+
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+        >
+        Cancel
+        </button>
+        <button
+        type="button"
+        class="btn btn-primary"
+        (click)="addBox()"
+        data-bs-dismiss="modal"
+        >
+        Add
+        </button>
+    </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Modal for Editing -->
+<div
+    class="modal fade"
+    id="editBoxModal"
+    tabindex="-1"
+    aria-labelledby="editBoxModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="editBoxModalLabel">Edit Break</h5>
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+        ></button>
+        </div>
+        <div class="modal-body">
+        <form>
+            <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+                type="text"
+                id="brand"
+                [(ngModel)]="box.brand"
+                name="brand"
+                class="form-control"
+            />
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Sport</label>
+                <select
+                id="role"
+                [(ngModel)]="box.sport"
+                name="role"
+                class="form-select"
+                >
+                <option value="" disabled>Select Sport</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Football">Football</option>
+                <option value="Soccer">Soccer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input
+                type="text"
+                id="description"
+                [(ngModel)]="box.description"
+                name="description"
+                class="form-control"
+                />
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input
+                type="text"
+                id="price"
+                [(ngModel)]="box.price"
+                name="price"
+                class="form-control"
+                />
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+        <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+        >
+            Cancel
+        </button>
+        <button
+            type="button"
+            class="btn btn-primary"
+            (click)="updateBox()"
+            data-bs-dismiss="modal"
+        >
+            Save
+        </button>
+        </div>
+    </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+<form #regForm="ngForm">
+<div class="login-container">
+    <div class="row">
+        <div >
+            <p>Username</p>
+        <input 
+        type="text"
+        class="form-control" 
+        name="User Name" 
+        required 
+        #username="ngModel" 
+        [(ngModel)]="user.username">
+            <p 
+                class="text-danger fw-bold"
+                *ngIf="username.touched && username.value.length < 7"
+                >Enter Username
+            </p>
+        </div>
+        <div >
+            <p>Email Address</p>
+        <input 
+        type="email"
+        class="form-control" 
+        name="Email Address" 
+        required
+        #email="ngModel" 
+        [(ngModel)]="user.email">
+        </div>
+            <p 
+            class="text-danger fw-bold"
+            *ngIf="email.touched && email.invalid"
+            >Enter Email address
+        </p>
+    </div>
+    <div class="row mt-5 mb-5">
+        <div>
+            <p>Password</p>
+        <input 
+        type="password" 
+        class="form-control" 
+        name="Password" 
+        required
+        #password="ngModel" 
+        [(ngModel)]="user.password">
+        </div>
+        <p 
+        class="text-danger fw-bold"
+        *ngIf="password.touched && password.invalid"
+        >Enter Email address
+    </p>
+        <div>
+            <p>Confirm Password</p>
+        <input 
+        type="password" 
+        class="form-control"  
+        name="Confirm Password" 
+        required
+        #confirmPassword="ngModel" 
+        [(ngModel)]="user.confirmPassword">
+        </div>
+        <p 
+        class="text-danger fw-bold"
+        *ngIf="confirmPassword.touched && confirmPassword.invalid"
+        >Enter Email address
+    </p>
+    </div>
+    <div class="row mt-5 mb-5">
+        <div class="col">
+        <button 
+        class="btn"
+        (click)="reg()"
+        [disabled]="regForm.invalid"
+        >Register</button>
+    <p 
+        class="text-danger fw-bold" 
+        *ngIf="passwordMismatch()"
+        >Passwords do not match.
+    </p>
+        </div>
+    </div>
+</div>
+</form>
+
+<app-footer></app-footer>

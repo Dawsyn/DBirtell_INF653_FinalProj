@@ -1,0 +1,16 @@
+<!--THIS WILL ONLY TEMPORARILY DISPLAY THE IMAGE-->
+
+<div class="mb-3">
+    <label for="image" class="form-label">Upload Image</label>
+    <input
+    type="file"
+    id="image"
+    class="form-control"
+    (change)="onFileSelected($event)"
+    accept="image/*"
+    />
+</div>
+  <div *ngIf="imagePreview">
+    <h4>Image Preview:</h4>
+    <img [src]="imagePreview" alt="Preview" class="img-thumbnail" />
+</div>

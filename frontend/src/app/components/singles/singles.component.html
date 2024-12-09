@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="wrapper">
+
+
+    
+    <nav class="filterby">
+        <p>Filter by Sport: </p>
+        <button (click)="filterBySport('')" class="filter-btn">All</button>
+        <button (click)="filterBySport('Basketball')" class="filter-btn">Basketball</button>
+        <button (click)="filterBySport('Football')" class="filter-btn">Football</button>
+        <button (click)="filterBySport('Baseball')" class="filter-btn">Baseball</button>
+        <button (click)="filterBySport('Soccer')" class="filter-btn">Soccer</button>
+    </nav>
+    
+    <!-- Card List -->
+    
+    </div>
+
+<div class="row">
+    <div class="col-sm-4" *ngFor="let card of filteredCardsWithImages">
+      <div class="card">
+        <div class="card-img">
+          <img src="../../../assets/images/cards/{{ card.img }}" alt="{{ card.description}}">
+        </div>
+        <div class="card-desc">
+          <p><strong>Player:</strong> {{ card.brand }}</p>
+          <p> {{ card.description }}</p>
+          <p><strong>Price:</strong> ${{ card.price }}</p>
+          <button class="btn btn-primary" (click)="addToCart(card)">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-footer></app-footer>

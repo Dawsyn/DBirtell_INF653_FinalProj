@@ -1,0 +1,150 @@
+
+.col-sm-4{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    max-height: 25%;
+    max-width: 50%;
+}
+
+.wrapper{
+    margin-right: 33%;
+    margin-left: 33%;
+}
+
+.btn{
+color:#F7F7FF;
+background-color: #fe5f55;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #f7f7ff;
+    color: #fe5f55;
+    border-color: #f7f7ff;
+    transform: scale(1.05);
+    transition: color 0.5s ease;
+}
+
+.titles{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.card{
+    border: 1px solid #e0e0e0; 
+    border-radius: 2%; 
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
+    max-width: 500px;
+    min-width: 277px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-text{
+    margin-bottom: 5px;
+    font-size: 16px; 
+    color: #495867;
+}
+
+.card-img{
+display: flex;
+flex: 1;
+text-align: left;
+word-wrap: break-word;
+height: auto;
+min-width: 320px;
+border: 2px solid #495867;
+margin-top: 10%;
+}
+
+.card-desc{
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    padding-right: 5%;
+    padding-left: 5%;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #6c757d; 
+    margin-bottom: 10px;
+}
+
+.card img {
+    width: auto; 
+    max-width: 350px;       
+    height: 320px;          
+    object-fit: cover;      
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2%;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+.filterby{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-top: 10px;
+}
+
+.filterby p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%; 
+    margin: 3px; 
+    padding: 10px 0; 
+    background-color: #fe5f55;
+    border: solid 1px #F7F7FF;
+    color: #F7F7FF;
+    box-sizing: border-box; 
+    font-size: 16px;
+    text-align: center;
+    min-width: 123px;
+    max-height: 45px;
+}
+
+.filter-btn{
+    color:#F7F7FF;
+    background-color: #fe5f55;
+    display: flex;
+    width: 10%;
+    margin: 3px;
+    justify-content: center;
+    align-items: center;
+    min-width: 123px;
+    max-height: 45px;
+    }
+
+    .filter-btn:hover {
+        background-color: #f7f7ff;
+        color: #fe5f55;
+        border-color: #f7f7ff;
+        transform: scale(1.05);
+        transition: color 0.5s ease;
+        
+    }
+
+    p, .filter-btn {
+        margin: 5;
+        padding: 0;
+        outline: none;
+    }

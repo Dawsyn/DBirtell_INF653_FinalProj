@@ -1,0 +1,23 @@
+i{
+    color:#F7F7FF;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.footer{
+    background-color: #495867;
+}
+
+.text-color:hover
+{
+    text-decoration-color: #fe5f55;
+    color:#fe5f55;
+}
+
+.text-color{
+    color:#F7F7FF;
+}
+
+.copyright{
+    color:#F7F7FF;
+}
