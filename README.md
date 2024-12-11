@@ -1,4 +1,4 @@
-# DBirtell_INF653_FinalProj
+# DBirtell_INF656_FinalProj
 # Card Shop Ecommerce web app
 
 # Install dependencies and start servers.

@@ -40,7 +40,8 @@ export class CartService {
 
   export interface Product {
     id: number;
-    name?: string;
+    firstname?: string;
+    lastname?: string;
     brand?: string;
     player?: string;
     sport: string;

@@ -9,7 +9,7 @@
     <div *ngIf="cartItems.length > 0">
       <ul>
         <li *ngFor="let item of cartItems">
-          <p><strong>{{ item.player || item.brand }} | {{ item.description }}</strong> - ${{ item.price }}</p>
+          <p><strong>{{ item.firstname}} {{item.lastname}} {{ item.brand }} | {{ item.description }}</strong> - ${{ item.price }}</p>
         </li>
       </ul>
       <!--Generates total price of all items in cart-->
