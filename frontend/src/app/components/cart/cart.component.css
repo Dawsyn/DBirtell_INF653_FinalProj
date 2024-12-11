@@ -1,20 +1,19 @@
 .cart-wrapper {
     display: flex;
-    flex-direction: column; /* Arrange title above the cart */
-    align-items: center; /* Center align content */
-    margin: 20px 0; /* Add spacing around the cart */
-
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
 }
 
 .cart-title {
     font-size: 1.5rem;
-    margin-bottom: 10px; /* Space between the title and the cart */
+    margin-bottom: 10px;
     color: #495867;
 }
 
 .cart-container {
     display: flex;
-    flex-direction: column; /* Ensure cart items stack vertically */
+    flex-direction: column;
     flex: 1;
     justify-content: center;
     margin-top: 24px;
@@ -25,10 +24,10 @@
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    width: 100%; /* Ensure the cart container spans the desired width */
-    max-width: 800px; /* Optional: Limit the cart's width */
+    width: 100%;
+    max-width: 800px;
 }
 
-.btn{
+.btn {
     margin: 2%;
 }

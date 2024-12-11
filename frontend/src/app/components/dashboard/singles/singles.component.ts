@@ -85,7 +85,7 @@ loadCards(){
   //delete card
   deleteCard(id: string){
     this.singlesService.deleteCard(id).subscribe((response)=>{
-      console.log('Employee deleted: ', response)
+      console.log('Card deleted: ', response)
       this.loadCards();
     })
   }

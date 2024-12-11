@@ -20,9 +20,10 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private cartService: CartService,
     private authService: AuthService
-  ) {}
+  ) { }
 
-cartItems = 0;
+  //initializes cart to 0
+  cartItems = 0;
 
   ngOnInit(): void {
     this.cartService.cart$.subscribe(items => {
@@ -38,6 +39,7 @@ cartItems = 0;
     { name: 'Home', url: '/', sub: [] },
     {
       name: 'Singles', url: '/singles', sub: [
+        { name: 'All', url: '/singles' },
         { name: 'Basketball', url: '/singles' },
         { name: 'Football', url: '/singles' },
         { name: 'Baseball', url: '/singles' },
@@ -46,6 +48,7 @@ cartItems = 0;
     },
     {
       name: 'Boxes', url: '/boxes', sub: [
+        { name: 'All', url: '/boxes' },
         { name: 'Basketball', url: '/boxes' },
         { name: 'Football', url: '/boxes' },
         { name: 'Baseball', url: '/boxes' },
@@ -54,6 +57,7 @@ cartItems = 0;
     },
     {
       name: 'Breaks', url: '/breaks', sub: [
+        { name: 'All', url: '/breaks' },
         { name: 'Basketball', url: '/breaks' },
         { name: 'Football', url: '/breaks' },
         { name: 'Baseball', url: '/breaks' },
@@ -61,7 +65,6 @@ cartItems = 0;
       ]
     },
     { name: 'About', url: '/about', sub: [] },
-    /* {name: 'Login', url: '/login', sub: []}, */
   ];
 
   // Filters content based on the selected sport
@@ -72,15 +75,16 @@ cartItems = 0;
     if (this.router.url === page) {
       $event.preventDefault(); // Prevent reload if already on the Singles page
     }
-      if (this.router.url !== page) {
-        // Navigate to Singles page if not already there
-        this.router.navigate([page]).then(() => {
-          $event.preventDefault();
-        });
+    if (this.router.url !== page) {
+      // Navigate to Singles page if not already there
+      this.router.navigate([page]).then(() => {
+        $event.preventDefault();
+      });
       console.log(`Selected sport: ${sport}`);
     }
   }
 
+  // Triggers logout
   logout(): void {
     this.authService.logout().subscribe({
       next: () => {

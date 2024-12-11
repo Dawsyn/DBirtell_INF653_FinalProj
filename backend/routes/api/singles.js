@@ -4,8 +4,8 @@ const singlesController = require('../../controllers/singlesController');
 
 
 router.route('/')
-    .get(singlesController.getAllCards)
-    .post(singlesController.addNewCard)
+    .get(singlesController.getAllCards) // Returns all singles
+    .post(singlesController.addNewCard) // Creates a new singles document
     .put(singlesController.updateCard) // Update card details
 
 router.route('/:id')

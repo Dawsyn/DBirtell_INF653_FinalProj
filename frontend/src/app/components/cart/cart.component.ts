@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
 })
 export class CartComponent implements OnInit {
   cartItems: Product[] = [];
-  
-  constructor(private cartService: CartService) {}
-  
+
+  constructor(private cartService: CartService) { }
+
 
   //Clears cart visually
   ngOnInit(): void {
@@ -23,14 +23,14 @@ export class CartComponent implements OnInit {
       this.cartItems = items;
     });
   }
-    
-  getTotalPrice(): number {
-      return this.cartItems.reduce((total, item) => total + item.price, 0);
-    }
-  
 
-  // Clear the cart
-  clearCart(): void{
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => total + item.price, 0);
+  }
+
+
+  // Clears the cart
+  clearCart(): void {
     this.cartService.clearCart();
   }
 }

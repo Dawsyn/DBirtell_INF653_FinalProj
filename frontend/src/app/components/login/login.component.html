@@ -1,39 +1,28 @@
 <app-header></app-header>
-    <div class="login-container">
-        <h2 class="form-title">Login</h2>
-        <form [formGroup]="userLogin" (ngSubmit)="login()">
+<div class="login-container">
+    <h2 class="form-title">Login</h2>
+    <form [formGroup]="userLogin" (ngSubmit)="login()">
         <div class="form-group">
             <label for="username" class="form-label">Username</label>
-            <input
-            type="text"
-            id="username"
-            formControlName="username"
-            placeholder="Enter your username"
-            class="form-control"
-            />
+            <input type="text" id="username" formControlName="username" placeholder="Enter your username"
+                class="form-control" />
             <div *ngIf="form['username'].invalid && form['username'].touched" class="form-error">
-            <small>Username is required.</small>
+                <small>Username is required.</small>
             </div>
         </div>
-    
+
         <div class="form-group">
             <label for="password" class="form-label">Password</label>
-            <input
-            type="password"
-            id="password"
-            formControlName="password"
-            placeholder="Enter your password"
-            class="form-control"
-            />
+            <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+                class="form-control" />
             <div *ngIf="form['password'].invalid && form['password'].touched" class="form-error">
-            <small>Password is required.</small>
+                <small>Password is required.</small>
             </div>
         </div>
-    
+
         <button class="btn btn-primary btn-block" type="submit" [disabled]="userLogin.invalid">Login</button>
         <p *ngIf="errorMessage" class="form-error">{{ errorMessage }}</p>
-        </form>
-    </div>
+    </form>
+</div>
 
 <app-footer></app-footer>
-

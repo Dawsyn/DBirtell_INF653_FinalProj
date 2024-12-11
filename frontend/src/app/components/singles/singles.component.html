@@ -1,35 +1,39 @@
 <app-header></app-header>
 <div class="wrapper">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Filter by Sport
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" (click)="filterBySport('')">All</a></li>
+      <li><a class="dropdown-item" (click)="filterBySport('Basketball')">Basketball</a></li>
+      <li><a class="dropdown-item" (click)="filterBySport('Football')">Football</a></li>
+      <li><a class="dropdown-item" (click)="filterBySport('Baseball')">Baseball</a></li>
+      <li><a class="dropdown-item" (click)="filterBySport('Soccer')">Soccer</a></li>
+    </ul>
+  </div>
 
 
-    
-    <nav class="filterby">
-        <p>Filter by Sport: </p>
-        <button (click)="filterBySport('')" class="filter-btn">All</button>
-        <button (click)="filterBySport('Basketball')" class="filter-btn">Basketball</button>
-        <button (click)="filterBySport('Football')" class="filter-btn">Football</button>
-        <button (click)="filterBySport('Baseball')" class="filter-btn">Baseball</button>
-        <button (click)="filterBySport('Soccer')" class="filter-btn">Soccer</button>
-    </nav>
-    
-    <!-- Card List -->
-    
-    </div>
+
+  <!-- Card List -->
+
+</div>
 
 <div class="row">
-    <div class="col-sm-4" *ngFor="let card of filteredCardsWithImages">
-      <div class="card">
-        <div class="card-img">
-          <img src="../../../assets/images/cards/{{ card.img }}" alt="{{ card.description}}">
-        </div>
-        <div class="card-desc">
-          <p><strong>Player:</strong> {{ card.brand }}</p>
-          <p> {{ card.description }}</p>
-          <p><strong>Price:</strong> ${{ card.price }}</p>
-          <button class="btn btn-primary" (click)="addToCart(card)">Add to cart</button>
-        </div>
+  <div class="col-sm-4" *ngFor="let card of filteredCardsWithImages">
+    <div class="card">
+      <div class="card-img">
+        <img src="../../../assets/images/cards/{{ card.img }}" alt="{{ card.description}}">
+      </div>
+      <div class="card-desc">
+        <p><strong>Player:</strong> {{ card.firstname }} {{ card.lastname }}</p>
+        <p> {{ card.description }}</p>
+        <p><strong>Price:</strong> ${{ card.price }}</p>
+        <button class="btn btn-primary" (click)="addToCart(card)">Add to cart</button>
       </div>
     </div>
   </div>
+</div>
 
 <app-footer></app-footer>

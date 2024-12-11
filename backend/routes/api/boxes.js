@@ -4,8 +4,8 @@ const boxesController = require('../../controllers/boxesController');
 
 
 router.route('/')
-    .get(boxesController.getAllBoxes)
-    .post(boxesController.addNewBox)
+    .get(boxesController.getAllBoxes) // Returns all boxes
+    .post(boxesController.addNewBox) // Creates a new box document
     .put(boxesController.updateBox) // Update Box details
 
 router.route('/:id')

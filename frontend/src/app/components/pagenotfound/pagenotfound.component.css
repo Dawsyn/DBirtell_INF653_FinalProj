@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    background-color: #f7f7ff;
+}
+
+.wrapper img {
+    max-width: 60%;
+    height: auto;
+    border: 5px solid #495867;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.wrapper text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large; 
+} 
+
+.wrapper a{
+    text-align: center;
+}

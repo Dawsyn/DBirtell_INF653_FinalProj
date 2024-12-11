@@ -44,8 +44,7 @@ export class SinglesService {
         description: card.description,
         price: card.price
       };
-    
-      console.log('Sending add request for Card:', payload); // Debugging log
+  
       return this.http.post<Card>(`${this.apiUrl}`, payload);
     }
   

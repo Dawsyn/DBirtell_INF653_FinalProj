@@ -4,8 +4,8 @@ const breaksController = require('../../controllers/breaksController');
 
 
 router.route('/')
-    .get(breaksController.getAllBreaks)
-    .post(breaksController.addNewBreak)
+    .get(breaksController.getAllBreaks) // Returns all breaks
+    .post(breaksController.addNewBreak) // Creates a new break document
     .put(breaksController.updateBreak) // Update Break details
 
 router.route('/:id')

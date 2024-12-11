@@ -1,17 +1,17 @@
-.icon{
+.icon {
     cursor: pointer;
 }
 
-.addBox{
-    color:#F7F7FF;
+.addBox {
+    color: #F7F7FF;
     background-color: #fe5f55;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .addBox:hover {
-        background-color: #f7f7ff;
-        color: #fe5f55;
-        border-color: #f7f7ff;
-        transform: scale(1.05);
-        transition: color 0.5s ease;
-    }
+}
+
+.addBox:hover {
+    background-color: #f7f7ff;
+    color: #fe5f55;
+    border-color: #f7f7ff;
+    transform: scale(1.05);
+    transition: color 0.5s ease;
+}

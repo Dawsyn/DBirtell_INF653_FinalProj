@@ -42,7 +42,6 @@ export class BreaksService {
         price: breaks.price
       };
     
-      console.log('Sending add request for Break:', payload); // Debugging log
       return this.http.post<Break>(`${this.apiUrl}`, payload);
     }
   

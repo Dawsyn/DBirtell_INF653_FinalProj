@@ -6,7 +6,6 @@ import { SinglesComponent } from './components/singles/singles.component';
 import { AboutComponent } from './components/about/about.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardSinglesComponent } from './components/dashboard/singles/singles.component';
@@ -22,7 +21,6 @@ export const routes: Routes = [
     { path: 'singles', component: SinglesComponent},
     { path: 'about', component: AboutComponent},
     { path: 'cart', component: CartComponent},
-    { path: 'register', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
     { path: 'dashboard', 
         component: DashboardComponent, 

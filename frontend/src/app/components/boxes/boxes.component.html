@@ -1,33 +1,38 @@
 <app-header></app-header>
 
 <div class="wrapper">
-    
-    <nav class="filterby">
-        <p>Filter by Sport: </p>
-        <button (click)="filterBySport('')" class="filter-btn">All</button>
-        <button (click)="filterBySport('Basketball')" class="filter-btn">Basketball</button>
-        <button (click)="filterBySport('Football')" class="filter-btn">Football</button>
-        <button (click)="filterBySport('Baseball')" class="filter-btn">Baseball</button>
-        <button (click)="filterBySport('Soccer')" class="filter-btn">Soccer</button>
-    </nav>
-    
-    <!-- Card List -->
-    
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Filter by Sport
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" (click)="filterBySport('')">All</a></li>
+            <li><a class="dropdown-item" (click)="filterBySport('Basketball')">Basketball</a></li>
+            <li><a class="dropdown-item" (click)="filterBySport('Football')">Football</a></li>
+            <li><a class="dropdown-item" (click)="filterBySport('Baseball')">Baseball</a></li>
+            <li><a class="dropdown-item" (click)="filterBySport('Soccer')">Soccer</a></li>
+        </ul>
     </div>
+
+    <!-- Card List -->
+
+</div>
 
 <div class="row">
     <div class="col-sm-4" *ngFor="let box of filteredBoxesWithImages">
-    <div class="card">
-        <div class="card-img">
-        <img src="../../../assets/images/boxes/{{ box.img }}" alt="{{ box.brand }}">
+        <div class="card">
+            <div class="card-img">
+                <img src="../../../assets/images/boxes/{{ box.img }}" alt="{{ box.brand }}">
+            </div>
+            <div class="card-desc">
+                <p><strong>Brand:</strong> {{ box.brand }}</p>
+                <p> {{ box.description }}</p>
+                <p><strong>Price:</strong> ${{ box.price }}</p>
+                <button class="btn btn-primary" (click)="addToCart(box)">Add to cart</button>
+            </div>
         </div>
-        <div class="card-desc">
-        <p><strong>Brand:</strong> {{ box.brand }}</p>
-        <p> {{ box.description }}</p>
-        <p><strong>Price:</strong> ${{ box.price }}</p>
-        <button class="btn btn-primary" (click)="addToCart(box)">Add to cart</button>
-        </div>
-    </div>
     </div>
 </div>
 

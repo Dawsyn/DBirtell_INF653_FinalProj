@@ -83,7 +83,7 @@ loadBoxes(){
   //delete break
   deleteBox(id: string){
     this.boxesService.deleteBox(id).subscribe((response)=>{
-      console.log('Break deleted: ', response)
+      console.log('Box deleted: ', response)
       this.loadBoxes();
     })
   }
@@ -92,28 +92,28 @@ loadBoxes(){
   addBox() {
       // Validate the form fields
       if (!this.box.brand || !this.box.sport || !this.box.description || !this.box.price) {
-        alert('All fields are required to add an break.');
+        alert('All fields are required to add an Box.');
         return;
       }
     
  // Convert price to a number
   this.box.price = Number(this.box.price);
 
- // Call the service to add the card
+ // Call the service to add the Box
   this.boxesService.addBox(this.box).subscribe({
     next: (newBox) => {
-      console.log('Card added successfully:', newBox);
-     this.loadBoxes(); // Refresh the Card list
+      console.log('Box added successfully:', newBox);
+     this.loadBoxes(); // Refresh the Box list
      this.resetBoxForm(); // Clear the form after adding
     },
     error: (error) => {
-      console.error('Error adding card:', error);
-      alert('Failed to add card. Please try again.');
+      console.error('Error adding Box:', error);
+      alert('Failed to add Box. Please try again.');
     },
   });
 }
   
-  // Reset form fields after adding a card
+  // Reset form fields after adding a Box
   resetBoxForm() {
     this.box = {
       _id: '',

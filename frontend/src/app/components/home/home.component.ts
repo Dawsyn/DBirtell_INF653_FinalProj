@@ -10,5 +10,8 @@ import { HeaderComponent } from "../header/header.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  public openEmail() {
+    // Opens a new email composition window
+    window.location.href = "mailto:Marketing@fake-TheCardShop.com?subject=Big Hits!";
+}
 }

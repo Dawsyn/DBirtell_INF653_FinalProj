@@ -2,235 +2,139 @@
     <h2>Available Breaks</h2>
 
     <table class="table">
-    <thead>
-        <tr>
-        <th>ID</th>
-        <th>Brand</th>
-        <th>Sport</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let breakObj of breaks">
-        <td>{{ breakObj._id }}</td>
-        <td>{{ breakObj.brand }}</td>
-        <td>{{ breakObj.sport }}</td>
-        <td>{{ breakObj.description }}</td>
-        <td>${{ breakObj.price }}</td>
-        <td>
-            <!-- Edit Button -->
-            <button
-            class="btn btn-primary btn-sm"
-            data-bs-toggle="modal"
-            data-bs-target="#editBreakModal"
-            (click)="getBreak(breakObj._id)"
-            >
-            Edit
-            </button>
-            <!-- Delete Button -->
-            <button
-            class="btn btn-danger btn-sm"
-            (click)="deleteBreak(breakObj._id)"
-            >
-            Delete
-            </button>
-        </td>
-        </tr>
-    </tbody>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Sport</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let breakObj of breaks">
+                <td>{{ breakObj._id }}</td>
+                <td>{{ breakObj.brand }}</td>
+                <td>{{ breakObj.sport }}</td>
+                <td>{{ breakObj.description }}</td>
+                <td>${{ breakObj.price }}</td>
+                <td>
+                    <!-- Edit Button -->
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editBreakModal"
+                        (click)="getBreak(breakObj._id)">
+                        Edit
+                    </button>
+                    <!-- Delete Button -->
+                    <button class="btn btn-danger btn-sm" (click)="deleteBreak(breakObj._id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
     </table>
-    <button
-    type="button"
-    class="btn btn-success mb-3 addBreak"
-    data-bs-toggle="modal"
-    data-bs-target="#addBreakModal"
-    >
-    Add New Break
+    <button type="button" class="btn btn-success mb-3 addBreak" data-bs-toggle="modal" data-bs-target="#addBreakModal">
+        Add New Break
     </button>
 </div>
 
 <!-- Modal for Adding Break -->
-<div
-class="modal fade"
-id="addBreakModal"
-tabindex="-1"
-aria-labelledby="addBreakModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="addBreakModalLabel">Add New Break</h5>
-        <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-        ></button>
-    </div>
-    <div class="modal-body">
-        <form>
-        <div class="mb-3">
-            <label for="brand" class="form-label">Brand</label>
-            <input
-            type="text"
-            id="brand"
-            [(ngModel)]="breakObj.brand"
-            name="brand"
-            class="form-control"
-            />
-        </div>
-        <div class="mb-3">
-            <label for="role" class="form-label">Sport</label>
-            <select
-            id="role"
-            [(ngModel)]="breakObj.sport"
-            name="role"
-            class="form-select"
-            >
-            <option value="" disabled>Select Sport</option>
-            <option value="Baseball">Baseball</option>
-            <option value="Basketball">Basketball</option>
-            <option value="Football">Football</option>
-            <option value="Soccer">Soccer</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <input
-            type="text"
-            id="description"
-            [(ngModel)]="breakObj.description"
-            name="description"
-            class="form-control"
-            />
-        </div>
-        <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input
-            placeholder="$150"
-            type="text"
-            id="price"
-            [(ngModel)]="breakObj.price"
-            name="price"
-            class="form-control"
-            />
-        </div>
+<div class="modal fade" id="addBreakModal" tabindex="-1" aria-labelledby="addBreakModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBreakModalLabel">Add New Break</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="brand" class="form-label">Brand</label>
+                        <input type="text" id="brand" [(ngModel)]="breakObj.brand" name="brand" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Sport</label>
+                        <select id="role" [(ngModel)]="breakObj.sport" name="role" class="form-select">
+                            <option value="" disabled>Select Sport</option>
+                            <option value="Baseball">Baseball</option>
+                            <option value="Basketball">Basketball</option>
+                            <option value="Football">Football</option>
+                            <option value="Soccer">Soccer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" id="description" [(ngModel)]="breakObj.description" name="description"
+                            class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input placeholder="$150" type="text" id="price" [(ngModel)]="breakObj.price" name="price"
+                            class="form-control" />
+                    </div>
 
-<app-image-upload></app-image-upload>
+                    <app-image-upload></app-image-upload>
 
 
-        </form>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary" (click)="addBreak()" data-bs-dismiss="modal">
+                    Add
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="modal-footer">
-        <button
-        type="button"
-        class="btn btn-secondary"
-        data-bs-dismiss="modal"
-        >
-        Cancel
-        </button>
-        <button
-        type="button"
-        class="btn btn-primary"
-        (click)="addBreak()"
-        data-bs-dismiss="modal"
-        >
-        Add
-        </button>
-    </div>
-    </div>
-</div>
 </div>
 
 
 <!-- Modal for Editing -->
-<div
-    class="modal fade"
-    id="editBreakModal"
-    tabindex="-1"
-    aria-labelledby="editBreakModalLabel"
-    aria-hidden="true"
->
+<div class="modal fade" id="editBreakModal" tabindex="-1" aria-labelledby="editBreakModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="editBreakModalLabel">Edit Break</h5>
-        <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-        ></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editBreakModalLabel">Edit Break</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="brand" class="form-label">Brand</label>
+                        <input type="text" id="brand" [(ngModel)]="breakObj.brand" name="brand" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Sport</label>
+                        <select id="role" [(ngModel)]="breakObj.sport" name="role" class="form-select">
+                            <option value="" disabled>Select Sport</option>
+                            <option value="Baseball">Baseball</option>
+                            <option value="Basketball">Basketball</option>
+                            <option value="Football">Football</option>
+                            <option value="Soccer">Soccer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" id="description" [(ngModel)]="breakObj.description" name="description"
+                            class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" id="price" [(ngModel)]="breakObj.price" name="price" class="form-control" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary" (click)="updateBreak()" data-bs-dismiss="modal">
+                    Save
+                </button>
+            </div>
         </div>
-        <div class="modal-body">
-        <form>
-            <div class="mb-3">
-            <label for="brand" class="form-label">Brand</label>
-            <input
-                type="text"
-                id="brand"
-                [(ngModel)]="breakObj.brand"
-                name="brand"
-                class="form-control"
-            />
-            </div>
-            <div class="mb-3">
-                <label for="role" class="form-label">Sport</label>
-                <select
-                id="role"
-                [(ngModel)]="breakObj.sport"
-                name="role"
-                class="form-select"
-                >
-                <option value="" disabled>Select Sport</option>
-                <option value="Baseball">Baseball</option>
-                <option value="Basketball">Basketball</option>
-                <option value="Football">Football</option>
-                <option value="Soccer">Soccer</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <input
-                type="text"
-                id="description"
-                [(ngModel)]="breakObj.description"
-                name="description"
-                class="form-control"
-                />
-            </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input
-                type="text"
-                id="price"
-                [(ngModel)]="breakObj.price"
-                name="price"
-                class="form-control"
-                />
-            </div>
-        </form>
-        </div>
-        <div class="modal-footer">
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-        >
-            Cancel
-        </button>
-        <button
-            type="button"
-            class="btn btn-primary"
-            (click)="updateBreak()"
-            data-bs-dismiss="modal"
-        >
-            Save
-        </button>
-        </div>
-    </div>
     </div>
 
 

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000'; // Update with your backend's URL
+  private baseUrl = 'http://localhost:3000'; // Backend's URL
   private currentUserSubject: BehaviorSubject<any>;
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
 

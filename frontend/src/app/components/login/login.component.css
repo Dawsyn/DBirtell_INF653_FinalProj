@@ -8,7 +8,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Add spacing between form elements */
+    gap: 1.5rem;
     margin: 10% auto;
     font-family: 'Arial', sans-serif;
 }
@@ -38,6 +38,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: all 0.3s ease;
+    margin-bottom: 8px;
 }
 
 .form-control:focus {
@@ -55,7 +56,7 @@
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    width: 100%; /* Make button stretch across the form */
+    width: 100%;
 }
 
 .btn:hover {
@@ -69,7 +70,7 @@
 .form-error {
     color: #fe5f55;
     font-size: 0.875rem;
-    margin-top: -5px; /* Slight adjustment for alignment */
+    margin-top: -5px;
 }
 
 @media (max-width: 768px) {

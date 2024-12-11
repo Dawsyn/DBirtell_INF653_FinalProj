@@ -63,12 +63,12 @@ loadBreaks(){
   
 
 
-   //update card
+   //update Break
   updateBreak() {
     if(this.breakObj._id && this.breakObj){
       this.breaksService.updateBreak(this.breakObj).subscribe({
         next: (updateBreak) => {
-          console.log("Card successfully updated.", updateBreak);
+          console.log("Break successfully updated.", updateBreak);
           this.loadBreaks();
     },
     error: (error)=>{
@@ -88,7 +88,7 @@ loadBreaks(){
     })
   }
 
-  //Adds a new card
+  //Adds a new Break
   addBreak() {
       // Validate the form fields
       if (!this.breakObj.brand || !this.breakObj.sport || !this.breakObj.description || !this.breakObj.price) {
@@ -99,16 +99,16 @@ loadBreaks(){
  // Convert price to a number
   this.breakObj.price = Number(this.breakObj.price);
 
- // Call the service to add the card
+ // Call the service to add the Break
   this.breaksService.addBreak(this.breakObj).subscribe({
     next: (newCard) => {
-      console.log('Card added successfully:', newCard);
+      console.log('Break added successfully:', newCard);
      this.loadBreaks(); // Refresh the Card list
      this.resetBreakForm(); // Clear the form after adding
     },
     error: (error) => {
-      console.error('Error adding card:', error);
-      alert('Failed to add card. Please try again.');
+      console.error('Error adding Break:', error);
+      alert('Failed to add Break. Please try again.');
     },
   });
 }
